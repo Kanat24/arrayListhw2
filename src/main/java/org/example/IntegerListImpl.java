@@ -3,16 +3,16 @@ package org.example;
 import java.util.Arrays;
 import java.util.Objects;
 
-public class StringListImpl implements StringList {
-    private String[] array;
+public class IntegerListImpl implements IntegerList {
+    private Integer[] array;
     private int size;
 
-    public StringListImpl() {
-        array = new String[10];
+    public IntegerListImpl() {
+        array = new Integer[10];
     }
 
-    public StringListImpl(int storage) {
-        array = new String[storage];
+    public IntegerListImpl(int storage) {
+        array = new Integer[storage];
     }
 
     public int getSize() {
@@ -23,17 +23,17 @@ public class StringListImpl implements StringList {
         this.size = size;
     }
 
-    public void setArray(String[] array) {
+    public void setArray(Integer[] array) {
         this.array = array;
     }
 
-    public String[] getArray() {
+    public Integer[] getArray() {
         return array;
 
     }
 
     @Override
-    public String add(String item) {
+    public Integer add(Integer item) {
         validItem(item);
         validSize();
         array[size++] = item;
@@ -42,7 +42,7 @@ public class StringListImpl implements StringList {
     }
 
     @Override
-    public String add(int index, String item) {
+    public Integer add(int index, Integer item) {
         validItem(item);
         validSize();
         validIndex(index);
@@ -57,7 +57,7 @@ public class StringListImpl implements StringList {
     }
 
     @Override
-    public String set(int index, String item) {
+    public Integer set(int index, Integer item) {
         validIndex(index);
         validItem(item);
         array[index] = item;
@@ -65,7 +65,7 @@ public class StringListImpl implements StringList {
     }
 
     @Override
-    public String remove(String item) {
+    public Integer remove(Integer item) {
         validItem(item);
         int index = indexOf(item);
         validIndex(index);
@@ -73,9 +73,9 @@ public class StringListImpl implements StringList {
     }
 
     @Override
-    public String remove(int index) {
+    public Integer remove(int index) {
         validIndex(index);
-        String item = array[index];
+        Integer item = array[index];
         validItem(item);
 if (index!=size){
     System.arraycopy(array, index+1, array, index, size-index);
@@ -85,15 +85,17 @@ if (index!=size){
     }
 
     @Override
-    public boolean contains(String item) {
-        if (indexOf(item) == -1) {
-            return false;
+    public boolean contains(Integer item) {
+        SortComparison.sortInsertion(array);
+       if (containsBinary(array, item))
+         {
+            return true;
         }
-        return true;
+        return false;
     }
 
     @Override
-    public int indexOf(String item) {
+    public int indexOf(Integer item) {
         validItem(item);
         for (int i = 0; i < size; i++) {
             if (Objects.equals(item, array[i])) {
@@ -104,7 +106,7 @@ if (index!=size){
     }
 
     @Override
-    public int lastIndexOf(String item) {
+    public int lastIndexOf(Integer item) {
         validItem(item);
         for (int i = size - 1; i >= 0; i--) {
             if (Objects.equals(item, array[i])) {
@@ -115,13 +117,13 @@ if (index!=size){
     }
 
     @Override
-    public String get(int index) {
+    public Integer get(int index) {
         validIndex(index);
         return array[index];
     }
 
     @Override
-    public boolean equals(StringList otherList) {
+    public boolean equals(IntegerList otherList) {
         if (otherList == null) {
             throw new IllegalArgumentException("Передан пустой список");
         }
@@ -150,7 +152,7 @@ if (index!=size){
     }
 
     @Override
-    public String[] toArray() {
+    public Integer[] toArray() {
         return Arrays.copyOf(array, size);
     }
 
@@ -166,10 +168,29 @@ if (index!=size){
         }
     }
 
-    public void validItem(String item) {
+    public void validItem(Integer item) {
         if (item == null) {
             throw new ItemNotNullException();
         }
+    }
+    private boolean containsBinary(Integer[] arr, int element) {
+        int min = 0;
+        int max = arr.length - 1;
+
+        while (min <= max) {
+            int mid = (min + max) / 2;
+
+            if (element == arr[mid]) {
+                return true;
+            }
+
+            if (element < arr[mid]) {
+                max = mid - 1;
+            } else {
+                min = mid + 1;
+            }
+        }
+        return false;
     }
 
 }
