@@ -14,7 +14,7 @@ public class IntegerListImplTest {
     @BeforeEach
     public void setUp() {
         IntegerList = new IntegerListImpl(10);
-        array = new Integer[]{10, 20, 30, 40, 50, 60, 70, 80};
+        array = new Integer[]{10, 20, 30, 40, 50, 5, 70, 80};
     IntegerList.setArray(array);
         IntegerList.setSize(7);
     }
@@ -77,6 +77,20 @@ public class IntegerListImplTest {
     public void isEmpty(){
         boolean b= IntegerList.isEmpty();
         Assertions.assertFalse(b);
+    }
+    @Test
+    public void sortTest(){
+    IntegerList.sort(array);
+    Integer[] expected = {5, 10, 20, 30, 40, 50, 70, 80};
+        assertThat(IntegerList.getArray()).isEqualTo(expected);
+
+    }
+    @Test
+    public void addNotIndex2() {
+        IntegerList.add(1,10);
+        IntegerList.add(2,10);
+        Integer[] expected = {10, 10, 10, 20, 30, 40, 50, 5, 70, null, null, null};
+        assertThat(IntegerList.getArray()).isEqualTo(expected);
     }
 
 }

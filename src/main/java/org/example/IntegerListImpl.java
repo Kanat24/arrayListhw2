@@ -69,7 +69,7 @@ public class IntegerListImpl implements IntegerList {
         validItem(item);
         int index = indexOf(item);
         validIndex(index);
-            return remove(index);
+        return remove(index);
     }
 
     @Override
@@ -77,9 +77,9 @@ public class IntegerListImpl implements IntegerList {
         validIndex(index);
         Integer item = array[index];
         validItem(item);
-if (index!=size){
-    System.arraycopy(array, index+1, array, index, size-index);
-}
+        if (index != size) {
+            System.arraycopy(array, index + 1, array, index, size - index);
+        }
         size--;
         return item;
     }
@@ -87,8 +87,7 @@ if (index!=size){
     @Override
     public boolean contains(Integer item) {
         SortComparison.sortInsertion(array);
-       if (containsBinary(array, item))
-         {
+        if (containsBinary(array, item)) {
             return true;
         }
         return false;
@@ -158,7 +157,7 @@ if (index!=size){
 
     public void validSize() {
         if (size >= array.length) {
-            throw new HighDimensionException();
+            grow();
         }
     }
 
@@ -173,6 +172,42 @@ if (index!=size){
             throw new ItemNotNullException();
         }
     }
+
+    public void sort(Integer[] array) {
+        quickSort(array, 0, array.length - 1);
+    }
+
+    public static void quickSort(Integer[] arr, int begin, int end) {
+        if (begin < end) {
+            int partitionIndex = partition(arr, begin, end);
+
+            quickSort(arr, begin, partitionIndex - 1);
+            quickSort(arr, partitionIndex + 1, end);
+        }
+    }
+
+    private static int partition(Integer[] arr, int begin, int end) {
+        int pivot = arr[end];
+        int i = (begin - 1);
+
+        for (int j = begin; j < end; j++) {
+            if (arr[j] <= pivot) {
+                i++;
+
+                swapElements(arr, i, j);
+            }
+        }
+
+        swapElements(arr, i + 1, end);
+        return i + 1;
+    }
+
+    private static void swapElements(Integer[] arr, int left, int right) {
+        int temp = arr[left];
+        arr[left] = arr[right];
+        arr[right] = temp;
+    }
+
     private boolean containsBinary(Integer[] arr, int element) {
         int min = 0;
         int max = arr.length - 1;
@@ -191,6 +226,10 @@ if (index!=size){
             }
         }
         return false;
+    }
+
+    private void grow() {
+        array = Arrays.copyOf(array, size + size / 2);
     }
 
 }

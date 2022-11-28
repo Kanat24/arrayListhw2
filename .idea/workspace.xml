@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a480754-ce90-4b4b-aba3-a2953dca7370" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/SortComparison.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/IntegerListImplTest.java" afterDir="false" />
+    <list default="true" id="9a480754-ce90-4b4b-aba3-a2953dca7370" name="Changes" comment="Проверьте ДЗ">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/StringList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IntegerList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/StringListImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IntegerListImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IntegerListImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IntegerListImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/IntegerListImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/IntegerListImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +44,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/sergejrudnev/IdeaProjects/web-library/arrayListhw2/src/main/java/org/example"
+    "last_opened_file_path": "/Users/sergejrudnev/IdeaProjects/web-library/arrayListhw2/src/main/java/org/example",
+    "spring.configuration.checksum": "57801fec12cb4ca68e13a431c9aa1289"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -60,22 +56,22 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.IntegerListImplTest.containsElement">
-    <configuration name="IntegerListImplTest.containsElement" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.IntegerListImplTest.addNotIndex2">
+    <configuration name="IntegerListImplTest.addNotIndex2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="arrayListhw2" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="IntegerListImplTest" />
-      <option name="METHOD_NAME" value="containsElement" />
+      <option name="METHOD_NAME" value="addNotIndex2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IntegerListImplTest.indexOf" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="IntegerListImplTest.containsElement" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="arrayListhw2" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="IntegerListImplTest" />
-      <option name="METHOD_NAME" value="indexOf" />
+      <option name="METHOD_NAME" value="containsElement" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -91,16 +87,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IntegerListImplTest.lastIndexOf" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="arrayListhw2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="IntegerListImplTest" />
-      <option name="METHOD_NAME" value="lastIndexOf" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="IntegerListImplTest.removeNotIndex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="arrayListhw2" />
       <option name="PACKAGE_NAME" value="" />
@@ -111,13 +97,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="IntegerListImplTest.sortTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="arrayListhw2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="IntegerListImplTest" />
+      <option name="METHOD_NAME" value="sortTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.IntegerListImplTest.addNotIndex2" />
+        <item itemvalue="JUnit.IntegerListImplTest.sortTest" />
         <item itemvalue="JUnit.IntegerListImplTest.containsElement" />
         <item itemvalue="JUnit.IntegerListImplTest.removeNotIndex" />
         <item itemvalue="JUnit.IntegerListImplTest.isEmpty" />
-        <item itemvalue="JUnit.IntegerListImplTest.indexOf" />
-        <item itemvalue="JUnit.IntegerListImplTest.lastIndexOf" />
       </list>
     </recent_temporary>
   </component>
@@ -129,8 +125,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669482349459</updated>
-      <workItem from="1669482351104" duration="7910000" />
+      <workItem from="1669482351104" duration="8224000" />
+      <workItem from="1669669945339" duration="2801000" />
     </task>
+    <task id="LOCAL-00001" summary="Проверьте ДЗ">
+      <created>1669491250677</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1669491250677</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,5 +151,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Проверьте ДЗ" />
+    <option name="LAST_COMMIT_MESSAGE" value="Проверьте ДЗ" />
   </component>
 </project>
